@@ -1,1 +1,39 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+@layer utilities {
+  .animate-slide-in-down {
+    animation: slide-in-down 5.0s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  @keyframes slide-in-down {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .font-calligraphy {
+    font-family: 'Great Vibes', cursive;
+  }
+}
