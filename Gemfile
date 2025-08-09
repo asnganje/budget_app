@@ -69,3 +69,5 @@ gem "tailwindcss-rails", "~> 4.2"
 gem "dotenv-rails"
 
 gem "devise"
+
+gem "inline_svg"
