@@ -11,7 +11,7 @@ export default class extends Controller {
   hide() {
     setTimeout(()=> {
       this.nameTarget.classList.toggle("hidden")
-    }, 200)
+    }, 4000)
   }
   
 }
