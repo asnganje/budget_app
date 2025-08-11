@@ -1,0 +1,2 @@
+class CloseController < ApplicationController
+end
