@@ -1,0 +1,21 @@
+<div data-controller="close" class="container mx-auto flex items-center justify-center">
+  <%if notice.present?%>
+    <p data-close-target="name" 
+      class="flex items-center justify-between absolute top-8 w-[90%] font-bold mx-auto md:w-1/2 bg-green-500 text-gray-100 py-1 px-4 rounded-lg"
+    >
+      <%= notice %>
+      <span data-action="click->close#hide" class="cursor-pointer">
+        <%= inline_svg_tag("close.svg", class:"w-8 h-8")%>
+      </span>
+    </p>
+  <% elsif alert.present? %>
+    <p data-close-target="name" 
+      class="flex items-center justify-between absolute top-8 w-[90%] mx-auto font-bold md:w-1/2 bg-red-500 text-gray-100 py-1 px-4 rounded-lg"
+    >
+      <%= alert %>
+      <span data-action="click->close#hide" class="cursor-pointer">
+        <%= inline_svg_tag("close.svg")%>
+      </span>
+    </p>
+  <%end%>
+</div>
