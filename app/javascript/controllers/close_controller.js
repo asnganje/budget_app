@@ -9,7 +9,7 @@ export default class extends Controller {
     }
   }
   hide() {
-    setTimeout(()=> {
+    setTimeout(()=> {      
       this.nameTarget.classList.toggle("hidden")
     }, 4000)
   }

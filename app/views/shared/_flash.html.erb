@@ -1,7 +1,7 @@
-<div data-controller="close" class="container mx-auto flex items-center justify-center">
-  <%if notice.present?%>
+<div data-controller="close" class="z-50 container mx-auto flex items-center justify-center">
+  <%if notice.present? %>
     <p data-close-target="name" 
-      class="flex items-center justify-between absolute top-8 w-[90%] font-bold mx-auto md:w-1/2 bg-green-500 text-gray-100 py-1 px-4 rounded-lg"
+      class="flex items-center justify-between z-50 absolute bottom-5 w-[90%] font-bold mx-auto md:w-1/2 bg-green-500 text-gray-100 py-1 px-4 rounded-lg"
     >
       <%= notice %>
       <span data-action="click->close#hide" class="cursor-pointer">
