@@ -1,0 +1,19 @@
+<%= render "shared/modal" do %>
+  <h2 class="text-xl font-bold mb-4">New Category</h2>
+  <%=form_with(model:group) do |f| %>
+    <div class="mb-4">
+      <%=f.label :name, class:"block text-gray-700"%>
+      <%=f.text_field :name, class:"w-full border rounded p-2"%>
+    </div>
+    <div class="flex justify-end space-x-2">
+      <button
+        type="button"
+        data-action="click->modal#toggle"
+        class="px-4 py-2 bg-gray-300 rounded"
+      >
+        Cancel
+      </button>
+      <%= f.submit "Create", class:"px-4 py-2 bg-blue-400 rounded text-white" %>
+    </div>
+  <% end %>
+<% end %>
