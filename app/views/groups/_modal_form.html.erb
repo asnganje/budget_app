@@ -1,0 +1,18 @@
+<%= render "shared/modal" do %>
+  <h2 class="text-xl font-bold mb-4">New Category</h2>
+  <%=form_with model: @group, data: { turbo_frame: "_top" } do |f| %>
+    <div class="mb-4">
+      <%=f.label :name, class:"block text-gray-700"%>
+      <%=f.text_field :name, class:"w-full border rounded p-2"%>
+    </div>
+    <div class="mb-4">
+      <%=f.label :icon, class:"block text-gray-700"%>
+      <%=f.text_field :icon, class:"w-full border rounded p-2"%>
+    </div>
+    <div class="flex justify-end space-x-2">
+      <%=button_to "Cancel", close_modal_path, method: :get, data: {turbo_frame: "modal"}, class: "px-4 py-2 bg-gray-300 rounded cursor-pointer" %>
+
+      <%= f.submit "Create", class:"px-4 py-2 bg-blue-400 rounded text-white cursor-pointer" %>
+    </div>
+  <% end %>
+<% end %>
