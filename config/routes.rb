@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "home#index"
   resources :groups
   get "dashboard", to: "dashboard#index"
+  get "close_modal", to: "groups#close_modal"
 end
