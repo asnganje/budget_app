@@ -1,6 +1,7 @@
 <li class="bg-white rounded shadow p-4 flex justify-between items-center">
-  <div>
+  <%= link_to group_path(group), data: {turbo_frame: "_top"}, class:"flex justify-between items-center w-full px-5" do %>
     <p class="font-bold text-lg"><%= group.name %></p>
     <p class="font-bold text-lg"><%= group.icon %></p>
-  </div>
+    <p class="font-bold text-lg">$<%= group.operations.sum(:amount) %></p>
+  <% end %>
 </li>
