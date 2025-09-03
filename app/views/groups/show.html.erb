@@ -1,0 +1,8 @@
+<section class="bg-gray-200 min-h-screen mt-0 px-8 lg:px-5">
+  <%=render "shared/navbar"%>
+  <p class="max-w-6xl mx-auto flex flex-col">Group Show</p>
+  <div class="max-w-6xl mx-auto flex w-1/2 justify-between items-center">
+    <%=button_to "Back", dashboard_path, method: :get, class:"p-2 cursor-pointer rounded-md text-white bg-blue-500"%>
+    <%=button_to "Delete", group_path(@group), method: :delete, class:"p-2 cursor-pointer rounded-md text-white bg-red-500"%>
+  </div>
+</section>
