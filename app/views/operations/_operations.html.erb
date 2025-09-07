@@ -1,0 +1,9 @@
+<% if operations.any? %>
+  <ul class="space-y-0 bg-white p-8 rounded">
+    <% operations.each do |operation| %>
+      <%= render "operations/operation", operation: operation %>
+    <% end %>
+  </ul>
+<% else %>
+  <p class="text-gray-500 text-xl tracking-tighter opacity-90 py-5">No transaction added yet...!</p>
+<% end %>
