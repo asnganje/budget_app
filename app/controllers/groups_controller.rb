@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
       respond_to do |format|
         format.turbo_stream do
           render turbo_stream: [
-            turbo_stream.replace(
+            turbo_stream.update(
             "groups",
             partial: "groups/groups",
             locals: { groups: Group.includes(:operations).order(:name) }
