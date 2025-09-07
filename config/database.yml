@@ -1,14 +1,16 @@
+# config/database.yml
+
 default: &default
   adapter: postgresql
-  url: <%= ENV["DATABASE_URL"] %>
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  host: <%= ENV['DB_HOST'] || 'localhost' %>
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   database: budget_app_development
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: 'localhost'
 
 test:
   <<: *default
@@ -16,4 +18,5 @@ test:
 
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   schema_search_path: budget,public
