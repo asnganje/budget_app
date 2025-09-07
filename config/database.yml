@@ -17,9 +17,19 @@ test:
   database: budget_app_test
 
 production:
-  <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
-  schema_search_path: budget,public
-
+  primary: &primary_production
+    <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
+    schema_search_path: budget,public
+  cache:
+    <<: *primary_production
+    database: budget_app_production_cache
+    migrations_paths: db/cache_migrate
   queue:
-    url: <%= ENV['QUEUE_DATABASE_URL'] %>
+    <<: *primary_production
+    database: budget_app_production_queue
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *primary_production
+    database: budget_app_production_cable
+    migrations_paths: db/cable_migrate
