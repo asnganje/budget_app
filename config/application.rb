@@ -23,5 +23,7 @@ module BudgetApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    puts "NGANJE DATABASE_URL ENV: #{ENV['DATABASE_URL'].inspect}"
+
   end
 end
