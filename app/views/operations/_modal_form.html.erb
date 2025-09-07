@@ -1,0 +1,24 @@
+<%= render "shared/modal", group: @group, operation: @operation do %>
+  <h2 class="text-xl font-bold mb-4">New Transaction</h2>
+  <%=form_with model:[group, operation], data: { turbo_frame: "_top" } do |f| %>
+    <div class="mb-4">
+      <%=f.label :name, class:"block text-gray-700"%>
+      <%=f.text_field :name, class:"w-full border rounded p-2"%>
+      <% if operation.errors[:name].any? %>
+        <p class="text-red-500 text-sm mt-1">Name <%= operation.errors[:name].first %></p>
+      <% end %>
+    </div>
+    <div class="mb-4">
+      <%=f.label :amount, class:"block text-gray-700"%>
+      <%=f.text_field :amount, class:"w-full border rounded p-2"%>
+      <% if operation.errors[:amount].any? %>
+        <p class="text-red-500 text-sm mt-1">Amount <%= operation.errors[:name].first %></p>
+      <% end %>
+    </div>
+    <div class="flex justify-end space-x-2">
+      <%=button_to "Cancel", close_modal_path, method: :get, data: {turbo_frame: "modal"}, class: "px-4 py-2 bg-gray-300 rounded cursor-pointer" %>
+
+      <%= f.submit "Create", class:"px-4 py-2 bg-blue-400 rounded text-white cursor-pointer" %>
+    </div>
+  <% end %>
+<% end %>
