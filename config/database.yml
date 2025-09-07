@@ -15,6 +15,7 @@ test:
   database: budget_app_test
 
 production:
+  url: <%= ENV['DATABASE_URL'] %>
   primary: &primary_production
     <<: *default
     database: budget_app_production

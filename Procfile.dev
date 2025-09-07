@@ -1,2 +1,4 @@
 web: ruby bin/rails server
 css: ruby bin/rails tailwindcss:watch
+
+web: bundle exec puma -C config/puma.rb
