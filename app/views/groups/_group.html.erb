@@ -1,7 +1,8 @@
-<li class="bg-white rounded shadow p-4 flex justify-between items-center">
-  <%= link_to group_path(group), data: {turbo_frame: "_top"}, class:"flex justify-between items-center w-full px-5" do %>
-    <p class="font-bold text-lg"><%= group.name %></p>
-    <p class="font-bold text-lg"><%= group.icon %></p>
-    <p class="font-bold text-lg">$<%= group.operations.sum(:amount) %></p>
+<li class=" px-4 py-5 border-b border-gray-300 hover:bg-white hover:shadow">
+  <%= link_to group_path(group), data: {turbo_frame: "_top"}, class:"grid grid-cols-[40px_1fr_1fr_1fr] lg:grid-cols-[80px_1fr_1fr_1fr] items-center hover:text-blue-500 hover:text-underline text-sm lg:text-lg" do %>
+    <div class="flex items-center"><%= index+1 %></div>
+    <div class="flex items-center text-2xl"><%= group.icon %></div>
+    <div class="flex items-center"><%= group.name %></div>
+    <div class="text-right">$<%= group.operations.sum(:amount) %></div>
   <% end %>
 </li>

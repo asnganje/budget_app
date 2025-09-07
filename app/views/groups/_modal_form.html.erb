@@ -4,10 +4,20 @@
     <div class="mb-4">
       <%=f.label :name, class:"block text-gray-700"%>
       <%=f.text_field :name, class:"w-full border rounded p-2"%>
+      <% if @group.errors[:name].any? %>
+        <p class="text-red-500 text-sm mt-1">Name <%= @group.errors[:name].first %></p>
+      <% end %>
     </div>
     <div class="mb-4">
       <%=f.label :icon, class:"block text-gray-700"%>
-      <%=f.text_field :icon, class:"w-full border rounded p-2"%>
+      <%=f.select :icon, [
+        ["📚 Books", "📚"],
+        ["🍔 Food", "🍔"],
+        ["💰 Money", "💰"],
+        ["🎮 Games", "🎮"],
+        ["🚗 Transport", "🚗"]
+      ],
+      {}, class:"w-full border rounded p-2"%>
     </div>
     <div class="flex justify-end space-x-2">
       <%=button_to "Cancel", close_modal_path, method: :get, data: {turbo_frame: "modal"}, class: "px-4 py-2 bg-gray-300 rounded cursor-pointer" %>
