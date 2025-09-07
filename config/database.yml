@@ -13,4 +13,4 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV["DATABASE_URL"] { raise "DATABASE_URL is missing!" } %> 
+  url: <%= ENV["DATABASE_URL"] %> 
