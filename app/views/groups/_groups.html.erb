@@ -1,4 +1,4 @@
-<div>
+<turbo-frame id="groups">
   <% if groups.any? %>
     <div class="bg-white shadow px-5 md:px-10 py-10">
       <div class="grid grid-cols-[40px_1fr_1fr_1fr] lg:grid-cols-[80px_1fr_1fr_1fr] font-bold text-gray-700 bg-gray-200 px-4 py-2 text-sm lg:text-lg">
@@ -24,7 +24,7 @@
           <div class="mt-10">
     <%=link_to "Add a new category",
     new_group_path,
-    data: { turbo_frame: "modal" },
+    data: { turbo_frame: "modal", turbo_prefetch: false },
     class:"bg-blue-400 hover:bg-blue-300 py-2 px-5 w-1/2 lg:w-1/5 text-center text-gray-100 font-bold rounded-lg" %>
   </div>
     </div>

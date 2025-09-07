@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
     render turbo_stream: turbo_stream.update(
       "modal",
       partial: "groups/modal_form",
-      locals: { operation: @operation, group: @group }
+      locals: { group: @group }
     )
   end
 
