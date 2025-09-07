@@ -15,5 +15,5 @@ test:
   database: budget_app_test
 
 production:
-    <<: *default
+  <<: *default
   schema_search_path: budget,public
