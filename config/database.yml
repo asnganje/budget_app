@@ -1,9 +1,6 @@
 default: &default
   adapter: postgresql
-  url: <%= ENV["DATABASE_URL"] %>
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  host: <%= ENV['DB_HOST'] || 'localhost' %>
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
@@ -15,21 +12,5 @@ test:
   database: budget_app_test
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
-  primary: &primary_production
-    <<: *default
-    database: budget_app_production
-    username: budget_app
-    password: <%= ENV["BUDGET_APP_DATABASE_PASSWORD"] %>
-  cache:
-    <<: *primary_production
-    database: budget_app_production_cache
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    database: budget_app_production_queue
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *primary_production
-    database: budget_app_production_cable
-    migrations_paths: db/cable_migrate
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
