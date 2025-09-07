@@ -20,3 +20,6 @@ production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
   schema_search_path: budget,public
+
+  queue:
+    url: <%= ENV['QUEUE_DATABASE_URL'] %>
